@@ -1,0 +1,20 @@
+# Docker Compose configuration for DB, pipeline and dashboard
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: lakehouse
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports: ["5432:5432"]
+
+  pipeline:
+    build: .
+    depends_on: [db]
+    command: python pipeline/run_pipeline.py
+
+  dashboard:
+    build: .
+    depends_on: [db]
+    command: streamlit run dashboard/app.py --server.address=0.0.0.0
+    ports: ["8501:8501"]

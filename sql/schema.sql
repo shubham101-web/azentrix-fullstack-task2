@@ -1,0 +1,2 @@
+-- Database schema definitions
+-- Tables created by pandas to_sql
