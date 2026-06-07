@@ -1,16 +1,16 @@
 # Mini Data Lakehouse with Analytics Dashboard
 
-A complete ETL (Extract, Transform, Load) pipeline that ingests data from CSV and REST API sources, transforms and cleans the data, stores curated datasets, loads analytics-ready data into PostgreSQL, and visualizes insights through an interactive Streamlit dashboard.
+A complete end-to-end Data Engineering project that demonstrates a Mini Data Lakehouse architecture using Python, PostgreSQL, Streamlit, and Docker. The pipeline extracts data from multiple sources, transforms and cleans it, loads analytics-ready data into PostgreSQL, and visualizes business insights through an interactive dashboard.
 
 ---
 
 ## Project Overview
 
-This project implements a Mini Data Lakehouse architecture that:
+This project implements an ETL (Extract, Transform, Load) pipeline that:
 
-* Extracts data from CSV and REST API sources
+* Extracts data from CSV files and REST APIs
 * Cleans and transforms raw datasets
-* Generates curated analytics datasets
+* Creates curated analytics datasets
 * Loads processed data into PostgreSQL
 * Visualizes insights using Streamlit
 * Supports Docker-based deployment
@@ -23,10 +23,39 @@ This project implements a Mini Data Lakehouse architecture that:
 * REST API Data Ingestion
 * Data Cleaning & Transformation
 * Curated Analytics Dataset Generation
-* PostgreSQL Analytics Layer
+* PostgreSQL Integration
 * Interactive Streamlit Dashboard
 * Dockerized Deployment
-* Modular ETL Pipeline
+* Modular ETL Architecture
+
+---
+
+## Technology Stack
+
+### Programming Language
+
+* Python
+
+### Data Processing
+
+* Pandas
+* Requests
+* PyArrow
+
+### Database
+
+* PostgreSQL
+* SQLAlchemy
+
+### Visualization
+
+* Streamlit
+* Plotly
+
+### Containerization
+
+* Docker
+* Docker Compose
 
 ---
 
@@ -57,6 +86,8 @@ azentrix-fullstack-task2/
 │   ├── revenue-trend.png
 │   └── top-products.png
 │
+├── .gitignore
+├── .gitattributes
 ├── Dockerfile
 ├── docker-compose.yml
 ├── requirements.txt
@@ -65,56 +96,51 @@ azentrix-fullstack-task2/
 
 ---
 
-## Technology Stack
-
-### Programming
-
-* Python
-
-### Data Processing
-
-* Pandas
-* Requests
-* PyArrow
-
-### Database
-
-* PostgreSQL
-* SQLAlchemy
-
-### Visualization
-
-* Streamlit
-* Plotly
-
-### Containerization
-
-* Docker
-* Docker Compose
-
----
-
 ## ETL Workflow
 
-### 1. Extract
+### Extract
 
 * Read source data from CSV files
-* Fetch additional data from REST APIs
+* Fetch data from REST APIs
 
-### 2. Transform
+### Transform
 
-* Clean and validate records
+* Clean invalid records
 * Handle missing values
 * Standardize formats
 * Generate analytics-ready datasets
 
-### 3. Load
+### Load
 
-* Load transformed datasets into PostgreSQL tables
+* Load transformed data into PostgreSQL
 
-### 4. Visualize
+### Visualize
 
-* Display business insights using Streamlit dashboards
+* Display business insights using Streamlit
+
+---
+
+## Running the Project
+
+### Run ETL Pipeline
+
+```bash
+python pipeline/ingest.py
+python pipeline/transform.py
+python pipeline/load.py
+```
+
+### Run Dashboard
+
+```bash
+streamlit run dashboard/app.py
+```
+
+Dashboard URL:
+
+```text
+http://localhost:8501
+```
 
 ---
 
@@ -146,138 +172,34 @@ azentrix-fullstack-task2/
 
 ---
 
-## Local Setup
+## Submission Links
 
-### Clone Repository
+### GitHub Repository
+**Repository Name:** azentrix-fullstack-task2
+## GitHub Repository URL
 
-```bash
-git clone <repository-url>
-cd azentrix-fullstack-task2
-```
+https://github.com/shubham101-web/azentrix-fullstack-task2
 
-### Create Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-### Activate Virtual Environment (Windows)
-
-```bash
-venv\Scripts\activate
-```
-
-### Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
+### Loom Demonstration Video
+https://www.loom.com/share/c6ca99728f754d97be7b53e84e2bb8e8
 ---
 
-## PostgreSQL Configuration
+## Deliverables Completed
 
-Ensure PostgreSQL is running locally on:
-
-```text
-localhost:5432
-```
-
-Default database connection:
-
-```text
-postgresql://postgres:postgres@localhost:5432/lakehouse
-```
-
----
-
-## Run ETL Pipeline
-
-### Ingestion
-
-```bash
-python pipeline/ingest.py
-```
-
-### Transformation
-
-```bash
-python pipeline/transform.py
-```
-
-### Load into PostgreSQL
-
-```bash
-python pipeline/load.py
-```
-
-Expected Output:
-
-```text
-Loaded
-```
-
----
-
-## Run Dashboard
-
-```bash
-streamlit run dashboard/app.py
-```
-
-Dashboard URL:
-
-```text
-http://localhost:8501
-```
-
----
-
-## Docker Deployment
-
-Start containers:
-
-```bash
-docker-compose up --build
-```
-
-Stop containers:
-
-```bash
-docker-compose down
-```
-
----
-
-## GitHub Repository
-
-GitHub repository link will be added before final submission.
-
----
-
-## Loom Demonstration Video
-
-Loom video link will be added after recording and uploading the project demonstration.
-
----
-
-## Submission Checklist
-
-* ETL Pipeline Implemented
+* ETL Pipeline
+* Data Transformation
 * PostgreSQL Integration
 * Streamlit Dashboard
 * Docker Support
+* Project Documentation
 * Screenshots Included
-* Documentation Completed
-* GitHub Repository Added
-* Loom Video Added
+* GitHub Repository
+* Loom Demonstration Video
 
 ---
 
 ## Author
 
-Shubham
+**Shubham**
 
-Project: Azentrix Full Stack Task 2
-
-
+Azentrix Full Stack Task 2
